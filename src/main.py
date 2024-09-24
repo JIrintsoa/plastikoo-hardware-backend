@@ -1,7 +1,7 @@
 import os
-from ticket import creeTicket, utiliseTicket
+from ticket import creeTicket
 from machine import getIdMachine
-from function import generateQrCodeInLocal
+from function import generateQrCodeTicketInLocal
 
 from dotenv import load_dotenv
 
@@ -30,4 +30,4 @@ if __name__ == "__main__":
     id_ticket = creeTicket(id_machine,gains).get('id_ticket')
 
     # Generate the Qr Code
-    generateQrCodeInLocal(id_ticket)
+    generateQrCodeTicketInLocal(id_ticket)
