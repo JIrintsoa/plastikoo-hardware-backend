@@ -21,7 +21,9 @@ def generateQrCodeTicketInLocal(id_ticket):
         raise ValueError("API host or port not set in environment variables")
 
     # Define the URL template
-    url_template = f'http://{api_host}:{api_port}/ticket/{id_ticket}'
+    # url_template = f'http://{api_host}:{api_port}/ticket/{id_ticket}'
+    url_template = f'http://{api_host}/ticket/{id_ticket}'
+
     
     # Encode the URL
     encoded_url = urllib.parse.quote(url_template, safe='')

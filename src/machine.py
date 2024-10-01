@@ -13,7 +13,8 @@ api_port = os.getenv('PORT_BACKEND_EXPRESS')
 def getIdMachine(payloads,timeout=5):
     try:
         # Send GET request to the API
-        url = f'http://{api_host}:{api_port}/machine'
+        # url = f'http://{api_host}:{api_port}/machine'
+        url = f'http://{api_host}/machine'
         
         response = requests.post(url, json=payloads ,timeout=timeout)
         

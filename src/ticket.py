@@ -18,7 +18,9 @@ api_port = os.getenv('PORT_BACKEND_EXPRESS')
 def creeTicket(id_machine_recolte, payload, timeout=5):
     try:
         # Construct the dynamic URL with the provided id_machine_recolte
-        url_cree = f'http://{api_host}:{api_port}/ticket/{id_machine_recolte}'
+        # url_cree = f'http://{api_host}:{api_port}/ticket/{id_machine_recolte}'
+        url_cree = f'http://{api_host}/ticket/{id_machine_recolte}'
+        
 
         # Make the POST request to the API with the given payload
         response = requests.post(url_cree, json=payload, timeout=timeout)
@@ -51,7 +53,9 @@ def creeTicket(id_machine_recolte, payload, timeout=5):
 def utiliseTicket(id_ticket,timeout=5):
     try:
         # Send GET request to the API
-        url_utilise = f'http://{api_host}:{api_port}/ticket/utilise/{id_ticket}'
+        # url_utilise = f'http://{api_host}:{api_port}/ticket/utilise/{id_ticket}'
+        url_utilise = f'http://{api_host}/ticket/utilise/{id_ticket}'
+
         
         response = requests.get(url_utilise, timeout=timeout)
         
