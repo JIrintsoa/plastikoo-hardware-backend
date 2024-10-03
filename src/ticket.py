@@ -28,7 +28,8 @@ def creeTicket(id_machine_recolte, payload, timeout=5):
         # Check if the request was successful
         if response.status_code == 200:
             print("Ticket créée avec succès !")
-            return response.json()  # Return the JSON response if needed
+            # print(response.json())
+            return response.json().get('id_ticket')  # Return the JSON response if needed
         else:
             print(f"Échec de la création de la ressource : {response.status_code}")
             return None

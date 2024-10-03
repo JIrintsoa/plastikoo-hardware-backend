@@ -22,11 +22,11 @@ def generateQrCodeTicketInLocal(id_ticket):
 
     # Define the URL template
     # url_template = f'http://{api_host}:{api_port}/ticket/{id_ticket}'
-    url_template = f'http://{api_host}/ticket/{id_ticket}'
+    # url_template = f'http://{api_host}/ticket/{id_ticket}'
 
     
     # Encode the URL
-    encoded_url = urllib.parse.quote(url_template, safe='')
+    # encoded_url = urllib.parse.quote(url_template, safe='')
 
     # Create a QR code for the encoded URL
     qr = qrcode.QRCode(
@@ -35,7 +35,8 @@ def generateQrCodeTicketInLocal(id_ticket):
         box_size=10,
         border=4,
     )
-    qr.add_data(encoded_url)
+    # qr.add_data(encoded_url)
+    qr.add_data(id_ticket)
     qr.make(fit=True)
 
     # Save QR code image

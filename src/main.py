@@ -23,11 +23,11 @@ if __name__ == "__main__":
 
     # gains obtenu
     gains = {
-        "montant": 20
+        "montant": 400
     }
 
     # Create the ticket and return the id of ticket
-    id_ticket = creeTicket(id_machine,gains).get('id_ticket')
+    id_ticket = creeTicket(id_machine,gains)
 
     # Generate the Qr Code
     generateQrCodeTicketInLocal(id_ticket)
